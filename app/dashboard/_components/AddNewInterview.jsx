@@ -36,7 +36,7 @@ function AddNewInterview() {
         e.preventDefault();
         // console.log(jobPosition, jobDesc, jobExperience);
 
-        const InputPrompt = "Job Position: "+ jobPosition +", Job Description: "+ jobDesc + ", Years of Experience: " + jobExperience +", Depends on this information please give me "+ process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT +" interview question with answers in Json Format only. Doesn't need extra info, only questions and answers.";
+        const InputPrompt = "Job Position: "+ jobPosition +", Job Description: "+ jobDesc + ", Years of Experience: " + jobExperience +", Depends on this information please give me "+ process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT +" interview question with answers in JSON format only with no backticks. Doesn't need extra info, only questions and answers.";
 
         const result = await chatSession.sendMessage(InputPrompt);
         const MockJsonResp = (result.response.text()).replace('```json','').replace('```','')
